@@ -22,17 +22,17 @@ RUN \
     && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \
     && if [ "${BUILD_ARCH}" = "armv7" ]; then ARCH="armhf"; fi \
     \
-    && INFLUXDB="1.8.10" \
+    && INFLUXDB="2.6.0" \
     && curl -J -L -o /tmp/influxdb.deb \
-        "https://dl.influxdata.com/influxdb/releases/influxdb_${INFLUXDB}_${ARCH}.deb" \
+        "https://repos.influxdata.com/debian/packages/influxdb2-${INFLUXDB}_${ARCH}.deb" \
     \
     && CHRONOGRAF="1.9.4" \
     && curl -J -L -o /tmp/chronograf.deb \
-        "https://dl.influxdata.com/chronograf/releases/chronograf_${CHRONOGRAF}_${ARCH}.deb" \
+        "https://repos.influxdata.com/debian/packages/chronograf_${CHRONOGRAF}_${ARCH}.deb" \
     \
-    && KAPACITOR="1.5.9-1" \
+    && KAPACITOR="1.6.5-1" \
     && curl -J -L -o /tmp/kapacitor.deb \
-        "https://dl.influxdata.com/kapacitor/releases/kapacitor_${KAPACITOR}_${ARCH}.deb" \
+        "https://repos.influxdata.com/debian/packages/kapacitor_${KAPACITOR}_${ARCH}.deb" \
     \
     && dpkg --install /tmp/influxdb.deb \
     && dpkg --install /tmp/chronograf.deb \
