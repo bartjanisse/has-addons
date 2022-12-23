@@ -25,17 +25,17 @@ RUN \
     && INFLUXDB="2.6.0" \
     && curl -J -L -o /tmp/influxdb.deb \
         #"https://repos.influxdata.com/debian/packages/influxdb2-${INFLUXDB}_${ARCH}.deb" \
-         "https://repos.influxdata.com/debian/packages/influxdb2-2.6.0-amd64.deb" \
+         "https://repos.influxdata.com/debian/packages/influxdb2-2.6.0-arm64.deb" \
     \
     && CHRONOGRAF="1.9.4" \
     && curl -J -L -o /tmp/chronograf.deb \
         #"https://repos.influxdata.com/debian/packages/chronograf_${CHRONOGRAF}_${ARCH}.deb" \
-         "https://repos.influxdata.com/debian/packages/chronograf_1.9.4_amd64.deb" \
+         "https://repos.influxdata.com/debian/packages/chronograf_1.9.4_arm64.deb" \
     \
     && KAPACITOR="1.6.5-1" \
     && curl -J -L -o /tmp/kapacitor.deb \
         #"https://repos.influxdata.com/debian/packages/kapacitor_${KAPACITOR}_${ARCH}.deb" \
-        "https://repos.influxdata.com/debian/packages/kapacitor_1.6.4-1_amd64.deb" \
+        "https://repos.influxdata.com/debian/packages/kapacitor_1.6.4-1_arm64.deb" \
     \
     && dpkg --install /tmp/influxdb.deb \
     && dpkg --install /tmp/chronograf.deb \
