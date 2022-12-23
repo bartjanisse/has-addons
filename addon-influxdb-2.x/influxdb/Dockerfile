@@ -18,23 +18,13 @@ RUN \
     \
     && luarocks install lua-resty-http 0.15-0 \
     \
-    && ARCH="${BUILD_ARCH}" \
-    && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \
-    && if [ "${BUILD_ARCH}" = "armv7" ]; then ARCH="armhf"; fi \
-    \
-    && INFLUXDB="2.6.0" \
     && curl -J -L -o /tmp/influxdb.deb \
-        #"https://repos.influxdata.com/debian/packages/influxdb2-${INFLUXDB}_${ARCH}.deb" \
          "https://repos.influxdata.com/debian/packages/influxdb2-2.6.0-arm64.deb" \
     \
-    && CHRONOGRAF="1.9.4" \
     && curl -J -L -o /tmp/chronograf.deb \
-        #"https://repos.influxdata.com/debian/packages/chronograf_${CHRONOGRAF}_${ARCH}.deb" \
          "https://repos.influxdata.com/debian/packages/chronograf_1.9.4_arm64.deb" \
     \
-    && KAPACITOR="1.6.5-1" \
     && curl -J -L -o /tmp/kapacitor.deb \
-        #"https://repos.influxdata.com/debian/packages/kapacitor_${KAPACITOR}_${ARCH}.deb" \
         "https://repos.influxdata.com/debian/packages/kapacitor_1.6.4-1_arm64.deb" \
     \
     && dpkg --install /tmp/influxdb.deb \
